@@ -3,7 +3,7 @@ pipeline{
         stages{
 		stage('---setup---'){
                         steps{
-                                sh "sudo rm -rf junichi@51.104.215.198:/var/lib/wildfly-10.1.0.Final/standalone/deployments/*"
+                                sh "sudo srm -rf junichi@51.104.215.198:/var/lib/wildfly-10.1.0.Final/standalone/deployments/*"
                         }
                 }
 		stage('---clean---'){
@@ -25,7 +25,7 @@ pipeline{
                         steps{
                                 sh "cd /"
 				sh "pwd"
-				sh "sudo scp /var/lib/jenkins/workspace/testpipeline/target/PharmacyAide.war junichi@51.104.215.198:/var/lib/wildfly-10.1.0.Final/standalone/deployments/"
+				sh "sudo scp /var/lib/jenkins/workspace/JenkinsVMPipe/target/hello-world-0.0.1-SNAPSHOT.jar junichi@51.104.215.198:/var/lib/wildfly-10.1.0.Final/standalone/deployments/"
                         }
                 }
         }
